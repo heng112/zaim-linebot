@@ -20,9 +20,13 @@ load_dotenv()
 LINE_ACCESS_TOKEN = os.getenv('LINE_ACCESS_TOKEN')
 LINE_USER_ID = os.getenv('LINE_USER_ID')
 
-line_bot_api = LineBotApi("LINE_ACCESS_TOKEN")
-handler = WebhookHandler("LINE_USER_ID")
 
+line_bot_api = LineBotApi(LINE_ACCESS_TOKEN)
+handler = WebhookHandler(LINE_USER_ID)
+
+@app.route("/")
+def hello_world():
+    return 'OKk'
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -45,10 +49,11 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text))
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=80, debug=True)
