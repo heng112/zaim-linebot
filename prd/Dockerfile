@@ -14,6 +14,7 @@ RUN pip install --upgrade pip
 RUN pip install -r /app/requirements.txt
 
 # ソースコードをコンテナ内にコピー
+
 COPY . /app
 WORKDIR ./app/app
 
