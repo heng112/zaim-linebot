@@ -17,8 +17,9 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
 RUN pip install --upgrade pip && \
     pip install jupyterlab ipython-sql && \
     pip install jupyterlab_sql && \
-    # pip install requests && \
-    # pip install json && \
+    pip install pandas && \
+    pip install pyzaim && \
+    pip install python-dotenv && \
     jupyter serverextension enable --py jupyterlab_sql --sys-prefix && \
     jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-matplotlib && \
     jupyter labextension install @jupyterlab/translation-extension
