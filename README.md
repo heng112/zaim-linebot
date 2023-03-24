@@ -15,10 +15,9 @@ LINE BOT で手軽に商品の相場を確認したい！
 
 - [x] zaimAPIから購入履歴データを収集
 - [x] 取集データをDBに格納
-- [ ] LINE BOTを構築 
+- [x] LINE BOTを構築 
 - [ ] LINE BOT と DBを接続する
 - [ ] 適切に出力するアルゴリズムを構築する
-- [ ] デプロイ（render の予定）
 - [ ] zaim APIから DBに定期的に取り込むデータパイプラインを構築
 
 
@@ -77,6 +76,7 @@ docker-compose up
 #### 使用技術
 - python
 - Docker
+- render
 
 - ローカル環境
   - SQLlite
