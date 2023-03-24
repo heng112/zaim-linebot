@@ -2,16 +2,9 @@ FROM python:3.9-slim-buster
 
 # 必要なライブラリをインストール
 RUN apt-get update && \
-    apt-get install -y build-essential libpq-dev git curl nodejs npm libsqlite3-dev && \
+    apt-get install -y build-essential git curl && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
-
-# Node.js をインストール
-RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
-    apt-get install -y nodejs && \
-    npm install -g n && \
-    n stable
 
 # 必要な Python パッケージをインストール
 RUN pip install --upgrade pip && \
