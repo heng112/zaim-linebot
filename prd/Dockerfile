@@ -19,5 +19,4 @@ COPY . /app
 WORKDIR /app
 
 
-# CMD ["python3", "src/hello.py"]
 CMD ["python", "line.py"]
