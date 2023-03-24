@@ -13,10 +13,8 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
     npm install -g n && \
     n stable
 
-# Jupyter Lab と必要な Python パッケージをインストール
+# 必要な Python パッケージをインストール
 RUN pip install --upgrade pip && \
-    pip install jupyterlab ipython-sql && \
-    pip install jupyterlab_sql && \
     pip install pandas && \
     pip install pyzaim && \
     pip install python-dotenv && \
