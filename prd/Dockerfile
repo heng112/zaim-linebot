@@ -15,8 +15,8 @@ RUN pip install --upgrade pip && \
     pip install Flask
 
 # ソースコードをコンテナ内にコピー
-COPY . /app
-WORKDIR /app
+COPY . /prd/app
+WORKDIR /prd/app
 
 
 CMD ["python", "line.py"]
