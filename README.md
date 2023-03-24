@@ -26,13 +26,13 @@ LINE BOT で手軽に商品の相場を確認したい！
 - Dockerイメージをビルドする
 
 ```
-docker build -t my-zaim-bot .
+docker build -t zaim-bot .
 ```
 
 - Dockerコンテナを起動する
 
 ```
-docker run -it --rm -p 8888:8888 -v $PWD:/app my-zaim-bot
+docker run -it --rm -p 8888:8888 -v $PWD:/app zaim-bot
 ```
 
 - jupyter lab にアクセス

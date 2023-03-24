@@ -20,10 +20,13 @@ RUN pip install --upgrade pip && \
     pip install pandas && \
     pip install pyzaim && \
     pip install python-dotenv && \
+    pip install line-bot-sdk && \
+    pip install Flask && \
     jupyter serverextension enable --py jupyterlab_sql --sys-prefix && \
     jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-matplotlib && \
     jupyter labextension install @jupyterlab/translation-extension
     # pip install jupyterlab-language-pack-ja
+
 
 # ソースコードをコンテナ内にコピー
 COPY . /app
