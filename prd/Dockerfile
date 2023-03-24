@@ -6,17 +6,15 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+
+COPY requirements.txt /app/ 
+
 # 必要な Python パッケージをインストール
-RUN pip install --upgrade pip && \
-    pip install pandas && \
-    pip install pyzaim && \
-    pip install python-dotenv && \
-    pip install line-bot-sdk && \
-    pip install Flask
+RUN pip install --upgrade pip
+RUN pip install -r /app/requirements.txt
 
 # ソースコードをコンテナ内にコピー
 COPY . /app
-WORKDIR /app
-
+WORKDIR ./app/app
 
 CMD ["python", "line.py"]

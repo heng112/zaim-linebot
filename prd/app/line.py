@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-
+from waitress import serve
 from flask import Flask, request, abort
 
 from linebot import (
@@ -56,4 +56,4 @@ def handle_message(event):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80, debug=True)
+    serve(app, host='0.0.0.0', port=5000)
