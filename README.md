@@ -16,25 +16,25 @@ LINE BOT で手軽に商品の相場を確認したい！
 - [x] zaimAPIから購入履歴データを収集
 - [x] 取集データをDBに格納
 - [x] LINE BOTを構築 
-- [ ] LINE BOT と DBを接続する
+- [x] LINE BOT と DBを接続する
 - [ ] 適切に出力するアルゴリズムを構築する
 - [ ] zaim APIから DBに定期的に取り込むデータパイプラインを構築
 
 
-### 環境構築
+### 環境構築(dev , test)
 
 - Dockerイメージをビルドする
 
 ```
 docker build -t zaim-bot .
-docker build -t prd-zaim-bot .
+docker build -t test-lszaim-bot .
 ```
 
 - Dockerコンテナを起動する
 
 ```
 docker run -it --rm -p 8888:8888 -v $PWD:/app zaim-bot
-docker run --rm -p 5000:80 -v ${PWD}/app:/app prd-zaim-bot
+docker run --rm -p 5001:80 -v ${PWD}/app:/app test-zaim-bot
 ```
 
 - jupyter lab にアクセス
@@ -55,33 +55,12 @@ SQLiteのDBファイルを作成する。
 ```
 
 
-- dockerコマンド一覧
-
-```
-Dockerを停止する: 
-
-docker-compose down
-
-Dockerを削除する: 
-
-docker-compose down --volumes --rmi all
-
-Dockerをビルドする:
-
-docker-compose build
-
-Dockerを起動する: 
-
-docker-compose up
-```
-
 #### 使用技術
 - python
 - Docker
+- SQLlite
 - render
 
-- ローカル環境
-  - SQLlite
 
 
 ## 後でやりたいこと
