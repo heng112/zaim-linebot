@@ -79,7 +79,7 @@ def handle_message(event):
     #テキストの生成
     text = ""
     data =req_input(event.message.text)
-    if(data[0] != ''):
+    if(len(data) != 0):
         for item in data:
             text += f"{item['日付']} に {item['商品名']} を購入しています。\n"
             text += f"金額: {item['金額']}\n"
