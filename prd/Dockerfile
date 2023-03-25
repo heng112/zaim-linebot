@@ -18,4 +18,4 @@ RUN pip install -r /app/requirements.txt
 COPY . /app
 WORKDIR ./app/app
 
-CMD ["python", "line.py"]
+CMD ["python", "send.py"]

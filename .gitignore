@@ -1,3 +1,4 @@
 .env
 zaim-backup.csv
-zaim.db
+zaim.csv
+# zaim.db
