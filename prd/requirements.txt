@@ -1,6 +1,0 @@
-pandas
-pyzaim
-python-dotenv
-line-bot-sdk
-Flask
-waitress
