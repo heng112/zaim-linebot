@@ -26,3 +26,12 @@ def get_guery(shohin: str, filename: str)->str:
         return f.read().format(shohin=shohin)
 
     
+
+def str_query(query_str : str):
+    
+    conn = sqlite3.connect('../db/zaim.db')
+    df = pd.read_sql(query_str, conn)
+    # result = df.to_dict(orient='records')
+    return df
+
+    
