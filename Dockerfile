@@ -29,8 +29,8 @@ RUN pip install --upgrade pip && \
 
 
 # ソースコードをコンテナ内にコピー
-COPY . /app
-WORKDIR /app
+COPY . /src
+WORKDIR /src
 
 # ポート番号8888を開放
 EXPOSE 8888
